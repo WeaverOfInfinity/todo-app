@@ -12,12 +12,20 @@ export default defineConfig([
       sourceType: 'module',
       globals: {
         ...globals.browser,
-        ...globals.node
+        ...globals.node,
+        jest: 'readonly',
+        expect: 'readonly',
+        test: 'readonly',
+        beforeAll: 'readonly',
+        afterAll: 'readonly',
+        beforeEach: 'readonly',
+        afterEach: 'readonly'
       }
     },
     plugins: {
       js,
-      '@stylistic': stylistic
+      '@stylistic': stylistic,
+      jest: 'off'
     },
     rules: {
       // Extends recommended rules with some additional best practices
